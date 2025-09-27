@@ -1,0 +1,30 @@
+workflows:
+  ios-app:
+    name: iOS Torque Calculator
+    environment:
+      xcode: latest
+      vars:
+        XCODE_WORKSPACE: "TorqueCalculator2.xcodeproj"
+        XCODE_SCHEME: "TorqueCalculator2"
+    scripts:
+      - name: Install dependencies
+        script: |
+          echo "No dependencies to install"
+      - name: Build iOS app
+        script: |
+          xcodebuild \
+            -project "$XCODE_WORKSPACE" \
+            -scheme "$XCODE_SCHEME" \
+            -sdk iphoneos \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+    artifacts:
+      - build/Release-iphoneos/*.app
+      - build/Release-iphoneos/*.ipa
+    publishing:
+      email:
+        recipients:
+          - your@email.com
