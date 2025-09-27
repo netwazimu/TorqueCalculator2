@@ -13,22 +13,44 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+
                         <subviews>
+                            <!-- Title Label -->
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hello Torque!" translatesAutoresizingMaskIntoConstraints="NO" id="label-1">
                                 <rect key="frame" x="20" y="100" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="labelColor"/>
                             </label>
+
+                            <!-- Mass Input TextField -->
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill"
+                                borderStyle="roundedRect" placeholder="Enter mass (kg)"
+                                translatesAutoresizingMaskIntoConstraints="NO" id="textField-1">
+                                <rect key="frame" x="20" y="150" width="200" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
                         </subviews>
+
+                        <!-- Constraints -->
                         <constraints>
+                            <!-- Label constraints -->
                             <constraint firstItem="label-1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="c1"/>
                             <constraint firstItem="label-1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c2"/>
+
+                            <!-- TextField constraints -->
+                            <constraint firstItem="textField-1" firstAttribute="top" secondItem="label-1" secondAttribute="bottom" constant="20" id="c3"/>
+                            <constraint firstItem="textField-1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c4"/>
+                            <constraint firstItem="textField-1" firstAttribute="width" secondItem="label-1" secondAttribute="width" id="c5"/>
                         </constraints>
                     </view>
+
+                    <!-- Outlets -->
                     <connections>
                         <outlet property="titleLabel" destination="label-1" id="outlet-titleLabel"/>
+                        <outlet property="massTextField" destination="textField-1" id="outlet-massTextField"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
