@@ -73,12 +73,8 @@ class ViewController: UIViewController {
         toolbar.sizeToFit()
         let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         //let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
-        let done: UIBarButtonItem
-        if #available(iOS 16.0, *) {
-            done = UIBarButtonItem(title: "Done", style: .prominent, target: self, action: #selector(dismissKeyboard))
-        } else {
-            done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
-        }
+        let done = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissKeyboard))
+
         toolbar.items = [flexible, done]
         primaryTextField.inputAccessoryView = toolbar
         secondaryTextField.inputAccessoryView = toolbar
