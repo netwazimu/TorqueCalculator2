@@ -18,113 +18,39 @@
 
                         <subviews>
                             <!-- Title Label -->
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" text="Torque Calculator" translatesAutoresizingMaskIntoConstraints="NO" id="titleLabel">
-                                <rect key="frame" x="20" y="40" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hello Torque!" translatesAutoresizingMaskIntoConstraints="NO" id="label-1">
+                                <rect key="frame" x="20" y="100" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="labelColor"/>
                             </label>
 
-                            <!-- Mode Segmented Control -->
-                            <segmentedControl translatesAutoresizingMaskIntoConstraints="NO" id="modeSegment">
-                                <segments>
-                                    <segment title="Torque ⇐ Mass"/>
-                                    <segment title="Mass ⇐ Torque"/>
-                                </segments>
-                            </segmentedControl>
-
-                            <!-- Mass Label -->
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Mass (kg)" translatesAutoresizingMaskIntoConstraints="NO" id="massLabel">
-                                <rect key="frame" x="20" y="120" width="120" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            </label>
-
                             <!-- Mass Input TextField -->
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" borderStyle="roundedRect" placeholder="e.g. 5.0" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="massTextField">
-                                <rect key="frame" x="20" y="146" width="335" height="34"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill"
+                                borderStyle="roundedRect" placeholder="Enter mass (kg)"
+                                translatesAutoresizingMaskIntoConstraints="NO" id="textField-1">
+                                <rect key="frame" x="20" y="150" width="200" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-
-                            <!-- Distance Label -->
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Distance (m)" translatesAutoresizingMaskIntoConstraints="NO" id="distanceLabel">
-                                <rect key="frame" x="20" y="196" width="120" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            </label>
-
-                            <!-- Distance Input TextField -->
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" borderStyle="roundedRect" placeholder="e.g. 0.2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="distanceTextField">
-                                <rect key="frame" x="20" y="222" width="335" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                            </textField>
-
-                            <!-- Calculate Button -->
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="calculateButton">
-                                <rect key="frame" x="20" y="272" width="335" height="48"/>
-                                <state key="normal" title="Calculate">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-
-                            <!-- Result Title -->
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Result" translatesAutoresizingMaskIntoConstraints="NO" id="resultTitleLabel">
-                                <rect key="frame" x="20" y="332" width="335" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            </label>
-
-                            <!-- Result Value -->
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="—" translatesAutoresizingMaskIntoConstraints="NO" id="resultValueLabel">
-                                <rect key="frame" x="20" y="358" width="335" height="44"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20" weight="semibold"/>
-                            </label>
                         </subviews>
 
                         <!-- Constraints -->
                         <constraints>
-                            <!-- titleLabel -->
-                            <constraint firstItem="titleLabel" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="c_title_top"/>
-                            <constraint firstItem="titleLabel" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c_title_center"/>
+                            <!-- Label constraints -->
+                            <constraint firstItem="label-1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="c1"/>
+                            <constraint firstItem="label-1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c2"/>
 
-                            <!-- modeSegment -->
-                            <constraint firstItem="modeSegment" firstAttribute="top" secondItem="titleLabel" secondAttribute="bottom" constant="12" id="c_mode_top"/>
-                            <constraint firstItem="modeSegment" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c_mode_lead"/>
-                            <constraint firstItem="modeSegment" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant=" -20" id="c_mode_trail"/>
-
-                            <!-- massTextField -->
-                            <constraint firstItem="massTextField" firstAttribute="top" secondItem="modeSegment" secondAttribute="bottom" constant="20" id="c_mass_top"/>
-                            <constraint firstItem="massTextField" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c_mass_lead"/>
-                            <constraint firstItem="massTextField" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="c_mass_trail"/>
-
-                            <!-- distanceTextField -->
-                            <constraint firstItem="distanceTextField" firstAttribute="top" secondItem="massTextField" secondAttribute="bottom" constant="20" id="c_dist_top"/>
-                            <constraint firstItem="distanceTextField" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c_dist_lead"/>
-                            <constraint firstItem="distanceTextField" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="c_dist_trail"/>
-
-                            <!-- calculateButton -->
-                            <constraint firstItem="calculateButton" firstAttribute="top" secondItem="distanceTextField" secondAttribute="bottom" constant="20" id="c_calc_top"/>
-                            <constraint firstItem="calculateButton" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c_calc_lead"/>
-                            <constraint firstItem="calculateButton" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="c_calc_trail"/>
-                            <constraint firstItem="calculateButton" firstAttribute="height" secondItem="nil" secondAttribute="notAnAttribute" constant="48" id="c_calc_height"/>
-
-                            <!-- result labels -->
-                            <constraint firstItem="resultTitleLabel" firstAttribute="top" secondItem="calculateButton" secondAttribute="bottom" constant="20" id="c_res_title_top"/>
-                            <constraint firstItem="resultTitleLabel" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c_res_title_lead"/>
-                            <constraint firstItem="resultValueLabel" firstAttribute="top" secondItem="resultTitleLabel" secondAttribute="bottom" constant="8" id="c_res_val_top"/>
-                            <constraint firstItem="resultValueLabel" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c_res_val_lead"/>
-                            <constraint firstItem="resultValueLabel" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="c_res_val_trail"/>
+                            <!-- TextField constraints -->
+                            <constraint firstItem="textField-1" firstAttribute="top" secondItem="label-1" secondAttribute="bottom" constant="20" id="c3"/>
+                            <constraint firstItem="textField-1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c4"/>
+                            <constraint firstItem="textField-1" firstAttribute="width" secondItem="label-1" secondAttribute="width" id="c5"/>
                         </constraints>
                     </view>
 
-                    <!-- Outlets and actions -->
+                    <!-- Outlets -->
                     <connections>
-                        <outlet property="modeSegmentedControl" destination="modeSegment" id="outlet-mode"/>
-                        <outlet property="massTextField" destination="massTextField" id="outlet-mass"/>
-                        <outlet property="distanceTextField" destination="distanceTextField" id="outlet-distance"/>
-                        <outlet property="calculateButton" destination="calculateButton" id="outlet-calc"/>
-                        <outlet property="resultTitleLabel" destination="resultTitleLabel" id="outlet-res-title"/>
-                        <outlet property="resultValueLabel" destination="resultValueLabel" id="outlet-res-val"/>
-                        <action selector="modeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="action-mode"/>
-                        <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="action-calc"/>
+                        <outlet property="titleLabel" destination="label-1" id="outlet-titleLabel"/>
+                        <outlet property="massTextField" destination="textField-1" id="outlet-massTextField"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
