@@ -1,19 +1,14 @@
-//
-//  ViewController.swift
-//  TorqueCalculator2
-//
-//  Created by Brian Omondi on 27/09/2025.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Just to confirm it works
+        titleLabel.text = "Torque App Ready"
     }
-
-
 }
+
 
