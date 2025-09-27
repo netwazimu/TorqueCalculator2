@@ -9,105 +9,16 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TorqueCalculator2" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <!-- Container Stack View -->
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fill" alignment="fill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mainStack">
-                            <rect key="frame" x="20" y="24" width="388" height="400"/>
-                            <subviews>
-                                <!-- Title -->
-                                <label text="Torque Calculator" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="titleLabel">
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                    <color key="textColor" cocoaTouchSystemColor="labelColor"/>
-                                </label>
-
-                                <!-- Mode Segmented Control -->
-                                <segmentedControl momentary="NO" translatesAutoresizingMaskIntoConstraints="NO" id="modeSegment">
-                                    <segments>
-                                        <segment title="Torque ⇐ Mass"/>
-                                        <segment title="Mass ⇐ Torque"/>
-                                    </segments>
-                                </segmentedControl>
-
-                                <!-- Input Section -->
-                                <view translatesAutoresizingMaskIntoConstraints="NO" id="inputsContainer">
-                                    <subviews>
-                                        <!-- Primary Label -->
-                                        <label text="Mass (kg)" translatesAutoresizingMaskIntoConstraints="NO" id="primaryLabel">
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="labelColor"/>
-                                        </label>
-
-                                        <!-- Primary TextField -->
-                                        <textField borderStyle="roundedRect" placeholder="e.g. 5.0" translatesAutoresizingMaskIntoConstraints="NO" id="primaryTextField">
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                        </textField>
-
-                                        <!-- Secondary Label -->
-                                        <label text="Distance (m)" translatesAutoresizingMaskIntoConstraints="NO" id="secondaryLabel">
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="labelColor"/>
-                                        </label>
-
-                                        <!-- Secondary TextField -->
-                                        <textField borderStyle="roundedRect" placeholder="e.g. 0.2" translatesAutoresizingMaskIntoConstraints="NO" id="secondaryTextField">
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                        </textField>
-                                    </subviews>
-                                </view>
-
-                                <!-- Calculate Button -->
-                                <button translatesAutoresizingMaskIntoConstraints="NO" id="calculateButton">
-                                    <state key="normal" title="Calculate">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                </button>
-
-                                <!-- Result Stack -->
-                                <stackView axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="resultStack">
-                                    <subviews>
-                                        <label text="Result" translatesAutoresizingMaskIntoConstraints="NO" id="resultTitleLabel">
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        </label>
-                                        <label text="—" translatesAutoresizingMaskIntoConstraints="NO" id="resultValueLabel">
-                                            <fontDescription key="fontDescription" type="system" pointSize="22" weight="semibold"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                        </stackView>
-
-                        <!-- Constraints -->
-                        <constraints>
-                            <constraint firstItem="mainStack" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="c1"/>
-                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="mainStack" secondAttribute="trailing" constant="20" id="c2"/>
-                            <constraint firstItem="mainStack" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="c3"/>
-                        </constraints>
                     </view>
-
-                    <!-- Outlets and actions -->
-                    <connections>
-                        <outlet property="modeSegmentedControl" destination="modeSegment" id="outlet-mode"/>
-                        <outlet property="primaryTextField" destination="primaryTextField" id="outlet-primaryText"/>
-                        <outlet property="secondaryTextField" destination="secondaryTextField" id="outlet-secondaryText"/>
-                        <outlet property="primaryLabel" destination="primaryLabel" id="outlet-primaryLabel"/>
-                        <outlet property="secondaryLabel" destination="secondaryLabel" id="outlet-secondaryLabel"/>
-                        <outlet property="calculateButton" destination="calculateButton" id="outlet-calcButton"/>
-                        <outlet property="resultTitleLabel" destination="resultTitleLabel" id="outlet-resultTitle"/>
-                        <outlet property="resultValueLabel" destination="resultValueLabel" id="outlet-resultValue"/>
-                        <action selector="modeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="action-mode-changed"/>
-                        <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="action-calc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
 </document>
