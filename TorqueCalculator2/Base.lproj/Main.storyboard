@@ -15,7 +15,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Hello Torque!" translatesAutoresizingMaskIntoConstraints="NO" id="label-1">
+                                <rect key="frame" x="20" y="100" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="labelColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="label-1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="c1"/>
+                            <constraint firstItem="label-1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="c2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="label-1" id="outlet-titleLabel"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
