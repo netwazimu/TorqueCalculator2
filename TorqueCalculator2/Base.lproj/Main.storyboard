@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TorqueCalculator2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <!-- Container Stack View -->
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fill" alignment="fill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mainStack">
+                            <rect key="frame" x="20" y="24" width="388" height="400"/>
+                            <subviews>
+                                <!-- Title -->
+                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Torque Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="titleLabel">
+                                    <rect key="frame" x="0.0" y="0.0" width="388" height="38"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="textColor" cocoaTouchSystemColor="labelColor"/>
+                                </label>
+
+                                <!-- Mode Segmented Control -->
+                                <segmentedControl segments="2" momentary="NO" translatesAutoresizingMaskIntoConstraints="NO" id="modeSegment">
+                                    <segment key="segment" title="Torque ⇐ Mass" id="seg0"/>
+                                    <segment key="segment" title="Mass ⇐ Torque" id="seg1"/>
+                                </segmentedControl>
+
+                                <!-- Input Section -->
+                                <view translatesAutoresizingMaskIntoConstraints="NO" id="inputsContainer">
+                                    <rect key="frame" x="0.0" y="64" width="388" height="160"/>
+                                    <subviews>
+                                        <!-- Primary Label -->
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Mass (kg)" translatesAutoresizingMaskIntoConstraints="NO" id="primaryLabel">
+                                            <rect key="frame" x="0" y="0" width="388" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="labelColor"/>
+                                        </label>
+
+                                        <!-- Primary TextField -->
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" borderStyle="roundedRect" placeholder="e.g. 5.0" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="primaryTextField">
+                                            <rect key="frame" x="0.0" y="28" width="388" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" />
+                                        </textField>
+
+                                        <!-- Secondary Label -->
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Distance (m)" translatesAutoresizingMaskIntoConstraints="NO" id="secondaryLabel">
+                                            <rect key="frame" x="0" y="72" width="388" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="labelColor"/>
+                                        </label>
+
+                                        <!-- Secondary TextField -->
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" borderStyle="roundedRect" placeholder="e.g. 0.2" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="secondaryTextField">
+                                            <rect key="frame" x="0.0" y="100" width="388" height="34"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="decimalPad" />
+                                        </textField>
+                                    </subviews>
+                                </view>
+
+                                <!-- Calculate Button -->
+                                <button opaque="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="calculateButton">
+                                    <rect key="frame" x="0.0" y="236" width="388" height="48"/>
+                                    <state key="normal" title="Calculate" />
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </button>
+
+                                <!-- Result Stack -->
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="resultStack">
+                                    <rect key="frame" x="0.0" y="292" width="388" height="80"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Result" translatesAutoresizingMaskIntoConstraints="NO" id="resultTitleLabel">
+                                            <rect key="frame" x="0" y="0" width="388" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="—" translatesAutoresizingMaskIntoConstraints="NO" id="resultValueLabel">
+                                            <rect key="frame" x="0" y="28" width="388" height="48"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22" weight="semibold"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+
+                        <!-- Constraints -->
+                        <constraints>
+                            <!-- mainStack constraints: center horizontally, top margin, leading/trailing -->
+                            <constraint firstItem="mainStack" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="c1"/>
+                            <constraint firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="mainStack" secondAttribute="trailing" constant="20" id="c2"/>
+                            <constraint firstItem="mainStack" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="c3"/>
+                        </constraints>
+
+                    </view>
+
+                    <!-- Outlets and actions -->
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="modeSegment" id="outlet-mode"/>
+                        <outlet property="primaryTextField" destination="primaryTextField" id="outlet-primaryText"/>
+                        <outlet property="secondaryTextField" destination="secondaryTextField" id="outlet-secondaryText"/>
+                        <outlet property="primaryLabel" destination="primaryLabel" id="outlet-primaryLabel"/>
+                        <outlet property="secondaryLabel" destination="secondaryLabel" id="outlet-secondaryLabel"/>
+                        <outlet property="calculateButton" destination="calculateButton" id="outlet-calcButton"/>
+                        <outlet property="resultTitleLabel" destination="resultTitleLabel" id="outlet-resultTitle"/>
+                        <outlet property="resultValueLabel" destination="resultValueLabel" id="outlet-resultValue"/>
+                        <action selector="modeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="action-mode-changed" connection="action-mode"/>
+                        <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="action-calc" connection="action-calc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+</document>
